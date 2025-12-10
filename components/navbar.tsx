@@ -37,10 +37,7 @@ export function Navbar() {
         <nav className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:shadow-emerald-500/40 transition-shadow">
-              <span className="text-white font-bold text-lg font-heading">P</span>
-            </div>
-            <span className="text-xl font-bold font-heading text-foreground">Pickle</span>
+            <img src="https://d3gja8ibqmfnox.cloudfront.net/static/images/logo/logo.png" alt="Pickle Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
