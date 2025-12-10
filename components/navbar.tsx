@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { href: "#features", label: "Features" },
@@ -24,20 +24,26 @@ export function Navbar() {
     { href: "#creators", label: "Explore Creators" },
     { href: "#pricing", label: "Pricing" },
     { href: "#faq", label: "FAQ" },
-  ]
+  ];
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm" : "bg-transparent",
+        isScrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
+          : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <img src="https://d3gja8ibqmfnox.cloudfront.net/static/images/logo/logo.png" alt="Pickle Logo" className="h-10 w-auto" />
+            <img
+              src="https://d3gja8ibqmfnox.cloudfront.net/static/images/logo/logo.png"
+              alt="Pickle Logo"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -55,7 +61,10 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+            <Button
+              variant="ghost"
+              className="text-muted-foreground hover:text-foreground"
+            >
               Login
             </Button>
             <Button className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all">
@@ -64,8 +73,15 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="lg:hidden p-2 text-foreground" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <button
+            className="lg:hidden p-2 text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </nav>
 
@@ -87,12 +103,14 @@ export function Navbar() {
                 <Button variant="ghost" className="justify-start">
                   Login
                 </Button>
-                <Button className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white">Get Started — Free</Button>
+                <Button className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white">
+                  Get Started — Free
+                </Button>
               </div>
             </div>
           </div>
         )}
       </div>
     </header>
-  )
+  );
 }

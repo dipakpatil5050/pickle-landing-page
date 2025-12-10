@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Twitter, Instagram, Youtube, Linkedin } from "lucide-react"
+import Link from "next/link";
+import { Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 
 const footerLinks = {
   Product: [
@@ -25,14 +25,14 @@ const footerLinks = {
     { label: "Terms of Service", href: "#" },
     { label: "Cookie Policy", href: "#" },
   ],
-}
+};
 
 const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Youtube, href: "#", label: "YouTube" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-]
+];
 
 export function Footer() {
   return (
@@ -42,10 +42,15 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <img src="https://d3gja8ibqmfnox.cloudfront.net/static/images/logo/logo.png" alt="Pickle Logo" className="h-10 w-auto" />
+              <img
+                src="https://d3gja8ibqmfnox.cloudfront.net/static/images/logo/logo.png"
+                alt="Pickle Logo"
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-              The creator-commerce platform that helps influencers turn their content into sustainable revenue.
+              The creator-commerce platform that helps influencers turn their
+              content into sustainable revenue.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -83,10 +88,14 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Pickle. All rights reserved.</p>
-          <p className="text-sm text-muted-foreground">Made with 💚 for creators everywhere</p>
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Pickle. All rights reserved.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Made with 💚 for creators everywhere
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
