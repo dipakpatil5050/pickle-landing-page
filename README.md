@@ -1,30 +1,84 @@
-# Pickle
+# 🚀 Landing Page – Developer Instructions
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+This document provides clear instructions on how to install, run, and maintain the improved Landing Page built using **Next.js**.
+Please follow the steps below for local development, deployment, and making future updates.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/dipak-patils-projects-b7c8cdae/v0-pickle)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/iyjl7DPHYvB)
+---
 
-## Overview
+## 📦 **1. Project Setup**
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+### **Prerequisites**
 
-## Deployment
+Make sure your environment has the following installed:
 
-Your project is live at:
+- **Node.js** (v18 or above recommended)
+- **npm** or **yarn**
 
-**[https://vercel.com/dipak-patils-projects-b7c8cdae/v0-pickle](https://vercel.com/dipak-patils-projects-b7c8cdae/v0-pickle)**
+### **Install Dependencies**
 
-## Build your app
+```bash
+npm install
+# or
+yarn install
+```
 
-Continue building your app on:
+---
 
-**[https://v0.app/chat/iyjl7DPHYvB](https://v0.app/chat/iyjl7DPHYvB)**
+## ▶️ **2. Running the Project Locally**
 
-## How It Works
+Start the development server:
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+The Landing Page will be available at:
+👉 **[http://localhost:3000](http://localhost:3000)**
+
+---
+
+## 🏗️ **3. Building for Production**
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+To preview the build locally:
+
+```bash
+npm run start
+```
+
+---
+
+## 🚀 **4. Deployment Instructions**
+
+Supports deployment to:
+
+### **Manual Deployment**
+
+```bash
+npm run build
+npm run start
+```
+
+---
+
+---
+
+## 📩 **5. For Any Modifications**
+
+If you want to:
+
+- Add new UI components
+- Adjust layout or responsiveness
+- Integrate analytics (GA, Pixel, etc.)
+- Connect APIs or backend services
+
+Please contact me — I will assist or update the page accordingly.
+
+---
