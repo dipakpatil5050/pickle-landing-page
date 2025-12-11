@@ -67,7 +67,7 @@ export function Navbar() {
             >
               Login
             </Button>
-            <Button className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all">
+            <Button className="bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all">
               Get Started — Free
             </Button>
           </div>
@@ -103,7 +103,7 @@ export function Navbar() {
                 <Button variant="ghost" className="justify-start">
                   Login
                 </Button>
-                <Button className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white">
+                <Button className="bg-linear-to-r from-emerald-500 to-teal-500 text-white">
                   Get Started — Free
                 </Button>
               </div>
