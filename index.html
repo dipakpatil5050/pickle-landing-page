@@ -8,11 +8,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Locomotive Scroll CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
-    />
+    <!-- Locomotive Scroll CSS removed to use native scrolling -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -399,6 +395,45 @@
         animation-play-state: paused;
       }
 
+      /* Reverse marquee for brands strip */
+      @keyframes marquee-reverse {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .marquee-track-reverse {
+        display: flex;
+        gap: 28px;
+        animation: marquee-reverse 40s linear infinite;
+      }
+
+      .animate-marquee {
+        animation: marquee-reverse 30s linear infinite;
+      }
+
+      .marquee-track-reverse:hover {
+        animation-play-state: paused;
+      }
+
+      .brand-pill {
+        min-width: 160px;
+        padding: 16px 28px;
+        border-radius: 9999px;
+        background: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
       /* Fallback - if locomotive fails after 3 seconds, show everything */
       .locomotive-fallback .fade-up,
       .locomotive-fallback .fade-left,
@@ -584,7 +619,7 @@
                     class="bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl p-4 text-white"
                   >
                     <p class="text-xs opacity-80">Revenue</p>
-                    <p class="text-2xl font-bold">$4.2K</p>
+                    <p class="text-2xl font-bold">₹4.2K</p>
                     <p class="text-xs text-emerald-100">+12.5%</p>
                   </div>
                   <div class="bg-white rounded-xl p-4 border">
@@ -616,7 +651,7 @@
                 <p class="text-sm text-gray-500">3 products tagged</p>
                 <span
                   class="inline-block mt-2 px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium"
-                  >$89 avg</span
+                  >₹8K avg</span
                 >
               </div>
 
@@ -647,9 +682,148 @@
                   </div>
                   <div>
                     <p class="font-semibold text-gray-800">New Sale!</p>
-                    <p class="text-sm text-gray-500">You earned $24.50</p>
+                    <p class="text-sm text-gray-500">You earned ₹750</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brands Marquee Section -->
+      <section class="py-16 overflow-hidden">
+        <!-- Heading -->
+        <div class="text-center mb-10">
+          <p
+            class="text-sm font-semibold uppercase tracking-widest text-gray-500"
+          >
+            Trusted by creators who work with top brands
+          </p>
+        </div>
+
+        <!-- Marquee Wrapper -->
+        <div class="relative">
+          <!-- Gradient fades -->
+          <div
+            class="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10"
+          ></div>
+          <div
+            class="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-10"
+          ></div>
+
+          <!-- Marquee Track -->
+          <div class="flex w-max animate-marquee">
+            <!-- Repeat brands twice for smooth loop -->
+            <div class="flex">
+              <!-- Amazon -->
+              <div class="mx-10 flex items-center">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                  alt="Amazon"
+                  class="h-8 object-contain"
+                />
+              </div>
+
+              <!-- Flipkart -->
+              <div class="mx-10 flex items-center">
+                <img
+                  src="https://cdn.worldvectorlogo.com/logos/flipkart.svg"
+                  alt="Flipkart"
+                  class="h-8 object-contain"
+                />
+              </div>
+
+              <!-- Myntra -->
+              <div class="mx-10 flex items-center">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png"
+                  alt="Myntra"
+                  class="h-8 object-contain"
+                />
+              </div>
+
+              <!-- Meesho -->
+              <div class="mx-10 flex items-center">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Meesho_logo.png"
+                  alt="Meesho"
+                  class="h-8 object-contain"
+                />
+              </div>
+
+              <!-- Shopify -->
+              <div class="mx-10 flex items-center">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Shopify_logo_2018.svg"
+                  alt="Shopify"
+                  class="h-8 object-contain"
+                />
+              </div>
+
+              <!-- WooCommerce -->
+              <div class="mx-10 flex items-center">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2a/WooCommerce_logo.svg"
+                  alt="WooCommerce"
+                  class="h-8 object-contain"
+                />
+              </div>
+
+              <!-- Stripe -->
+              <div class="mx-10 flex items-center">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Stripe_Logo%2C_revised_2016.svg"
+                  alt="Stripe"
+                  class="h-7 object-contain"
+                />
+              </div>
+            </div>
+
+            <!-- Duplicate set for infinite loop -->
+            <div class="flex">
+              <!-- Same logos repeated -->
+              <div class="mx-10">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                  class="h-8"
+                />
+              </div>
+              <div class="mx-10">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/1/13/Flipkart_logo.svg"
+                  class="h-8"
+                />
+              </div>
+              <div class="mx-10">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png"
+                  class="h-8"
+                />
+              </div>
+              <div class="mx-10">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Meesho_logo.png"
+                  class="h-8"
+                />
+              </div>
+              <div class="mx-10">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Shopify_logo_2018.svg"
+                  class="h-8"
+                />
+              </div>
+              <div class="mx-10">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2a/WooCommerce_logo.svg"
+                  class="h-8"
+                />
+              </div>
+              <div class="mx-10">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Stripe_Logo%2C_revised_2016.svg"
+                  class="h-7"
+                />
               </div>
             </div>
           </div>
@@ -778,7 +952,7 @@
                   <div
                     class="absolute -bottom-2 -left-2 px-3 py-1 bg-white rounded-full shadow-lg text-xs font-medium"
                   >
-                    $89
+                    ₹8K
                   </div>
                 </div>
               </div>
@@ -884,7 +1058,7 @@
                     <div
                       class="w-12 h-12 bg-emerald-500 rounded-xl shadow-lg flex items-center justify-center text-white font-bold"
                     >
-                      $
+                      ₹
                     </div>
                   </div>
                 </div>
@@ -1031,7 +1205,7 @@
                 class="bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl p-5 text-white"
               >
                 <p class="text-sm opacity-80 mb-1">Total Revenue</p>
-                <p class="text-3xl font-bold">$4,285</p>
+                <p class="text-3xl font-bold">₹3.28L</p>
                 <p class="text-sm text-emerald-100 mt-1">+12.5% this month</p>
               </div>
               <div class="bg-white rounded-2xl p-5 border border-gray-100">
@@ -1204,7 +1378,7 @@
                   are beautiful and actually help me make better decisions."
                 </p>
                 <div class="bg-purple-50 rounded-xl p-3">
-                  <p class="text-2xl font-bold text-purple-600">$28K</p>
+                  <p class="text-2xl font-bold text-purple-600">₹28K</p>
                   <p class="text-sm text-gray-500">Monthly revenue</p>
                 </div>
               </div>
@@ -1355,7 +1529,7 @@
                   are beautiful and actually help me make better decisions."
                 </p>
                 <div class="bg-purple-50 rounded-xl p-3">
-                  <p class="text-2xl font-bold text-purple-600">$28K</p>
+                  <p class="text-2xl font-bold text-purple-600">₹28K</p>
                   <p class="text-sm text-gray-500">Monthly revenue</p>
                 </div>
               </div>
@@ -1491,7 +1665,7 @@
               <h3 class="text-xl font-bold font-heading mb-2">Starter</h3>
               <p class="text-gray-500 mb-6">Perfect for getting started</p>
               <div class="mb-6">
-                <span class="text-4xl font-bold">$0</span>
+                <span class="text-4xl font-bold">₹0</span>
                 <span class="text-gray-500">/month</span>
               </div>
               <ul class="space-y-4 mb-8">
@@ -1561,7 +1735,7 @@
               <h3 class="text-xl font-bold font-heading mb-2">Creator</h3>
               <p class="text-gray-500 mb-6">For serious creators</p>
               <div class="mb-6">
-                <span class="text-4xl font-bold">$12</span>
+                <span class="text-4xl font-bold">₹1080</span>
                 <span class="text-gray-500">/month</span>
               </div>
               <ul class="space-y-4 mb-8">
@@ -1659,7 +1833,7 @@
               <h3 class="text-xl font-bold font-heading mb-2">Brand</h3>
               <p class="text-gray-500 mb-6">For teams and brands</p>
               <div class="mb-6">
-                <span class="text-4xl font-bold">$49</span>
+                <span class="text-4xl font-bold">₹4.9K</span>
                 <span class="text-gray-500">/month</span>
               </div>
               <ul class="space-y-4 mb-8">
@@ -2361,85 +2535,39 @@
       </footer>
     </main>
 
-    <!-- Locomotive Scroll JS -->
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-
     <script>
-      let scroll = null;
-      let locomotiveInitialized = false;
+      // Enable native smooth scrolling
+      // document.documentElement.style.scrollBehavior = "smooth";
 
-      // Fallback: if locomotive doesn't initialize within 3 seconds, show all content
-      const fallbackTimeout = setTimeout(() => {
-        if (!locomotiveInitialized) {
-          document.body.classList.add("locomotive-fallback");
-          console.log("[v0] Locomotive scroll fallback activated");
-        }
-      }, 3000);
+      // function updateScrollUI() {
+      //   const scrollY = window.scrollY || window.pageYOffset;
+      //   const docHeight =
+      //     document.documentElement.scrollHeight - window.innerHeight;
+      //   const progress = docHeight > 0 ? scrollY / docHeight : 0;
+      //   const bar = document.getElementById("scrollProgress");
+      //   if (bar) bar.style.transform = `scaleX(₹{progress})`;
 
-      // Initialize Locomotive Scroll after DOM is ready
-      document.addEventListener("DOMContentLoaded", function () {
-        try {
-          scroll = new LocomotiveScroll({
-            el: document.querySelector("[data-scroll-container]"),
-            smooth: true,
-            smoothMobile: false, // Disable smooth scroll on mobile for better performance
-            multiplier: 0.8,
-            lerp: 0.075,
-            smartphone: {
-              smooth: false,
-            },
-            tablet: {
-              smooth: true,
-              multiplier: 1.5,
-            },
-          });
+      //   const navbar = document.getElementById("navbar");
+      //   if (navbar) {
+      //     if (scrollY > 100) navbar.classList.add("scrolled");
+      //     else navbar.classList.remove("scrolled");
+      //   }
+      // }
 
-          // Mark as initialized
-          locomotiveInitialized = true;
-          clearTimeout(fallbackTimeout);
+      // window.addEventListener("scroll", updateScrollUI);
+      // window.addEventListener("resize", updateScrollUI);
+      // window.addEventListener("load", updateScrollUI);
 
-          // Add init class to html for CSS targeting
-          document.documentElement.classList.add("has-scroll-init");
+      // // Update progress when images load
+      // document.querySelectorAll("img").forEach((img) => {
+      //   if (img.complete) return;
+      //   img.addEventListener("load", updateScrollUI);
+      // });
 
-          // Update scroll progress bar
-          scroll.on("scroll", (args) => {
-            const progress = args.scroll.y / args.limit.y;
-            document.getElementById(
-              "scrollProgress"
-            ).style.transform = `scaleX(${progress || 0})`;
-
-            // Navbar background on scroll
-            const navbar = document.getElementById("navbar");
-            if (args.scroll.y > 100) {
-              navbar.classList.add("scrolled");
-            } else {
-              navbar.classList.remove("scrolled");
-            }
-          });
-
-          // Smooth scroll to section on nav click
-          document.querySelectorAll("[data-scroll-to]").forEach((link) => {
-            link.addEventListener("click", (e) => {
-              e.preventDefault();
-              const target = link.getAttribute("href");
-              scroll.scrollTo(target);
-            });
-          });
-
-          // Update locomotive scroll when images load
-          window.addEventListener("load", () => {
-            if (scroll) scroll.update();
-          });
-
-          // Resize handler
-          window.addEventListener("resize", () => {
-            if (scroll) scroll.update();
-          });
-        } catch (error) {
-          console.error("[v0] Locomotive scroll failed to initialize:", error);
-          document.body.classList.add("locomotive-fallback");
-        }
-      });
+      // // Keep anchor links behavior (native smooth scroll already enabled)
+      // document.querySelectorAll("[data-scroll-to]").forEach((link) => {
+      //   // Let default anchor behavior handle navigation; no JS scroll library used.
+      // });
 
       // FAQ Toggle Function
       function toggleFaq(button) {
