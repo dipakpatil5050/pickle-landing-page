@@ -58,3 +58,9 @@ Thumbs.db
 
 # Output of 'npm pack'
 *.tgz
+
+
+
+backup.md
+
+*.bak
